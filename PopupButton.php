@@ -1,6 +1,6 @@
 <?php
 
-namespace aayushmhu\helpers;
+namespace aayushmhu\popupbutton;
 use yii;
 
 /**
