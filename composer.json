@@ -3,7 +3,7 @@
 
     "type": "yii2-extension",
 
-    "description": "The Imagine integration for the Yii framework",
+    "description": "Add Popup Where You Want in Your Yii2 App",
     "keywords": ["yii2", "popup", "modal", "helper"],
     "license": "BSD-3-Clause",
     "authors": [
