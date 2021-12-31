@@ -3,7 +3,7 @@
 
     "type": "yii2-extension",
 
-    "description": "Add Popup Where You Want in Your Yii2 App",
+    "description": "Add Popup Where You Want in Your Yii2 App. This Extension is a Combination of Bootstrap4 Button and Bootstrap4 Modal. With the Help of THis Extension, You can Easily Render any Page Into Poup Modal in Your YII2 Application. ",
     "keywords": ["yii2", "popup", "modal", "helper"],
     "license": "BSD-3-Clause",
     "authors": [
