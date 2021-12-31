@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "aayushmhu/popupbutton\\": "src/"
+            "aayushmhu\\popupbutton\\": ""
         }
     },
     "extra": {
