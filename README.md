@@ -1,5 +1,9 @@
 # popupbutton
 
+To Install This Plugin Run
+
+composer require aayushmhu/yii2-popupbutton dev-main
+
 For Use This Plugin You Need to Install Bootstrap 4
 
 Example
