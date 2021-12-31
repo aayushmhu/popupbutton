@@ -9,15 +9,18 @@ use yii;
 class PopupButton extends \yii\bootstrap4\Button {
 
     const DEFAULT_BUTTON = 'aayushmhu-popupbtn';
+    const POPUP_VIEWONLY = 1;
+    const POPUP_WITHFORM = 2;
+    const POPUP_WITHFORM_SEARCH = 3;
     public $formid;
     public $searchformid;
     public $spinerclass = '"fa fa-spin fa-spinner"';
-    public $popupwithsearch =false;
     public $options = [
         'id'=>'aayushmhu-popupbtn',
         'value'=>'',
     ];
     public $cssFile = '@aayushmhu/popupbutton/assets/default.css';
+    public $type = self::POPUP_VIEWONLY;
     /**
      * Auto Run Function
      *
@@ -26,7 +29,7 @@ class PopupButton extends \yii\bootstrap4\Button {
     public function run() {
         $this->cssFile = dirname(__DIR__).'/yii2-popupbutton/assets/default.css';
         $view = $this->getView();
-        $js = "
+        $withformjs = "
         $('.popupButton').unbind( 'click' ).click( function () {
                 $('#modal').modal('show')
                 .find('#modalContent')
@@ -66,7 +69,7 @@ class PopupButton extends \yii\bootstrap4\Button {
             });
         ";
 
-        $searchjs = "
+        $withformsearchjs = "
         $('.popupButton').unbind( 'click' ).click( function () {
             $('#modal').modal('show')
             .find('#modalContent')
@@ -107,10 +110,20 @@ class PopupButton extends \yii\bootstrap4\Button {
         });
         ";
 
-        if($this->popupwithsearch == True){
-            $view->registerJs($searchjs);
-        }else{
-            $view->registerJs($js);
+        $viewonlyjs = "
+        $('.popupButton').unbind( 'click' ).click( function () {
+                $('#modal').modal('show')
+                .find('#modalContent')
+                .load($(this).attr('value'));
+            });
+        ";
+
+        if($this->type == self::POPUP_VIEWONLY){
+            $view->registerJs($viewonlyjs);
+        }else if($this->type == self::POPUP_WITHFORM){
+            $view->registerJs($withformjs);
+        }else if($this->type == self::POPUP_WITHFORM_SEARCH){
+            $view->registerJs($withformsearchjs);
         }
 
         $view->registerCss(file_get_contents($this->cssFile));
