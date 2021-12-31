@@ -11,6 +11,10 @@ class PopupButton extends \yii\bootstrap4\Button {
     public $formid;
     public $productid;
     public $spinerclass = '"fa fa-spin fa-spinner"';
+    public $options = [
+        'value'=>'',
+        'data-id'=>'',
+    ];
 
     /**
      * Auto Run Function
