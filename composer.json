@@ -1,5 +1,5 @@
 {
-    "name": "aayushmhu/popupbutton",
+    "name": "aayushmhu/yii2-popupbutton",
 
     "type": "yii2-extension",
 
@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Popup\\": "src/"
+            "aayushmhu/popupbutton\\": "src/"
         }
     },
     "extra": {
