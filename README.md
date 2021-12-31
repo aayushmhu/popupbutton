@@ -6,6 +6,15 @@ Example
 
 IN View
 
+// For Popup Add Modal
+\yii\bootstrap4\Modal::begin([
+'id' => 'modal',
+'size' => 'modal-lg',
+]);
+
+echo "<div id='modalContent'></div>";
+\yii\bootstrap4\Modal::end();
+
 use \aayushmhu\popupbutton\PopupButton;
 \aayushmhu\popupbutton\PopupButton::widget([
 'options' => [
