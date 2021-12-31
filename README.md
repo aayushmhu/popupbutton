@@ -2,13 +2,16 @@
 
 To Install This Plugin Run
 
-composer require aayushmhu/yii2-popupbutton dev-main
+"composer require aayushmhu/yii2-popupbutton dev-main"
 
-For Use This Plugin You Need to Install Bootstrap 4
+For Use This Plugin You Need to Write tHis Code
 
-Example
+For Example
 
-IN View
+<pre>
+<code>
+
+// IN View
 
 // For Popup Add Modal
 \yii\bootstrap4\Modal::begin([
@@ -20,26 +23,34 @@ echo "<div id='modalContent'></div>";
 \yii\bootstrap4\Modal::end();
 
 use \aayushmhu\popupbutton\PopupButton;
-\aayushmhu\popupbutton\PopupButton::widget([
-'options' => [
-'id'=>\aayushmhu\popupbutton\PopupButton::DEFAULT_BUTTON,
-'value'=>'/site/popup',
-'class'=>'btn btn-primary popupButton',
-],
-'formid'=>'department-form',
-'type'=>\aayushmhu\popupbutton\PopupButton::POPUP_VIEWONLY,
-'label'=>'Popup',
-]);
 
-in Controllers Use
+echo PopupButton::widget([
+    'options' => [
+        'id'=>\aayushmhu\popupbutton\PopupButton::DEFAULT_BUTTON,
+        'value'=>'/site/popup',
+        'class'=>'btn btn-primary popupButton',
+    ],
+    'formid'=>'department-form',
+    'type'=>\aayushmhu\popupbutton\PopupButton::POPUP_VIEWONLY,
+    'label'=>'Popup',
+]);
+</code>
+</pre>
+
+In Controller render your pages as Ajax
+
+<pre>
+<code>
 public function actionPopup(){
 
     $model = $this->yourmodel();
 
-return $this->renderAjax('contact', [
-'model' => $model,
-]);
+    return $this->renderAjax('contact', [
+        'model' => $model,
+    ]);
 }
+</code>
+</pre>
 
 value : This is the Url of Rendered Page
 formid : This is Form if of Your Form if You Used form inside Popup
